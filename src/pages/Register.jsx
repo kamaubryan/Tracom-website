@@ -1,26 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Register = () => {
+  // State variables for form inputs
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log("Submitted:", { fullName, email, password });
+  };
+
   return (
     <StyledWrapper>
       <div className="wrapping">
         <div className="form-box">
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <span className="title">Sign up</span>
             <span className="subtitle">
               Create a free account with your email.
             </span>
             <div className="form-container">
-              <input type="text" className="input" placeholder="Full Name" />
-              <input type="email" className="input" placeholder="Email" />
-              <input type="password" className="input" placeholder="Password" />
+              <input
+                type="text"
+                className="input"
+                placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+              />
+              <input
+                type="email"
+                className="input"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                className="input"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
-            <button>Sign up</button>
+            <button type="submit">Sign up</button>
           </form>
           <div className="form-section">
             <p>
-              Have an account? <a href="">Log in</a>{" "}
+              Have an account? <Link to="/login"> login</Link>
             </p>
           </div>
         </div>

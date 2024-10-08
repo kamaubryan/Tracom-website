@@ -6,19 +6,19 @@ function Navbar() {
   return (
     <header className="main-header">
       <nav className="main-nav">
-        <img src={logo} alt="tracom-logo" className="main-logo" />
+        <Link to="/">
+          
+          <img src={logo} alt="tracom-logo" className="main-logo" />
+        </Link>
         <ul id="main-nav-ul">
-          {/* {/* <li>
-            <Link to="/Body">Home</Link>
-          </li> */}
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/aboutUs">About</Link>
           </li>
           <li>
             <Link to="/services">Services</Link>
           </li>
           <li>
-            <Link to="/Body">Team</Link>
+            <Link to="/team">Team</Link>
           </li>
           <li>
             <Link to="/Body">Contact</Link>

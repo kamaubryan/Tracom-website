@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import displayImage from "../assets/woman.png";
 function Body() {
   return (
@@ -11,7 +12,9 @@ function Body() {
           provider, integrating secure, efficient financial technologies. By
           merging tech education with real-world application
         </p>
-        <button> learn more</button>
+        <button><Link to="/aboutUs" style={
+          { textDecoration: 'none'}
+        }>Learn More</Link></button>
       </div>
       <div className="picture">
         <img src={displayImage} alt="" />
